@@ -11,7 +11,7 @@ app.service('People', function($http, $q) {
     // return people;
     console.log('num:', num);
 
-    var pageUrl = `http://swapi.co/api/people/?page=${num}`
+    var pageUrl = `https://swapi.co/api/people/?page=${num}`
 
     console.log('pageUrl:', pageUrl);
 
