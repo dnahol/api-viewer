@@ -1,0 +1,7 @@
+<h1 class='title'>LIST</h1>
+<h4>Click on Name for Character Details</h4>
+<ul>
+  <li ng-repeat='character in page' ui-sref='detail({name: character.name})'>
+    Name: {{character.name}}
+  </li>
+</ul>
