@@ -19,5 +19,8 @@
     "angular-ui-router": "^0.2.18",
     "ngSweetAlert": "angular-sweetalert#^1.1.0",
     "bootstrap": "^3.3.6"
+  },
+  "resolutions": {
+    "angular": "1.5.5"
   }
 }
