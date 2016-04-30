@@ -23,15 +23,22 @@ app.config(function($stateProvider, $urlRouterProvider) {
       pageObj:
       function(People, $stateParams) {
         // return a promise which will resolve to the pageObj
-        console.log('$stateParams.num: ', $stateParams.num );
+        console.log('$stateParams.num in list: ', $stateParams.num );
         return People.getByPage($stateParams.num);
       }
     }
   })
   .state('detail', {
-    url: '/detail/:name',
+    url: '/detail/:id',
     templateUrl: '/html/detail.html',
-    controller: 'detailCtrl'
+    controller: 'detailCtrl',
+    resolve: {
+      person:
+      function(People, $stateParams) {
+        console.log('$stateParams in detail: ', $stateParams);
+       return People.getById($stateParams.id);
+      }
+    }
   })
 
   $urlRouterProvider.otherwise('/');

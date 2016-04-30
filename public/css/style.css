@@ -1,13 +1,35 @@
 /*
-** ALL CREDIT GOES TO
-** Craig Buckler
-** http://www.sitepoint.com/css3-starwars-scrolling-text/
-**
-** Blame me for the music via embedded video bit
+** Scrolling text adapted from
+** http://www.sitepoint.com/css3-starwars-scrolling-text/ by Craig Buckler
+** Bootswatch Cyborg theme + own styling
 */
 @import url(http://fonts.googleapis.com/css?family=Droid+Sans:400,700);
 * { padding: 0; margin: 0; }
 
+/* unvisited link */
+a {
+  color: #44EEEE;
+}
+
+/* mouse over link */
+a:hover {
+  color: #FFFF66;
+}
+
+/* selected link */
+a:active {
+  color: orange;
+}
+
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #424242;
+  margin: 1em 0;
+  padding: 0;
+}
 
 #navbar
 {
@@ -78,7 +100,7 @@ p#start
   90% { opacity: 1; }
   100% { opacity: 0; }
 }
-h1
+h1, .status
 {
   position: absolute;
   width: 2.6em;

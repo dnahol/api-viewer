@@ -6,27 +6,37 @@ app.controller('navControl', function($scope) {
   $scope.reloadPage= () => {
     console.log('page reload');
     location.reload();
+
+
+
   };
 });
 
 
-app.controller('listCtrl', function($scope, $state, pageObj, People) {
+app.controller('listCtrl', function($scope, $stateParams, $state, pageObj, People) {
   console.log('listCtrl!');
   //$scope.page = [{},{},{},{}] array of person objects on that page
-  console.log('pageObj.data.results: ', pageObj.data.results);
-  $scope.test = People.getByPage(2);
-  console.log('$scope.test (set to page 2 state):', $scope.test);
-  $scope.page = pageObj.data.results;
-  //    console.log('$scope.page: ',  $scope.page );
+  console.log('pageObj: ', pageObj);
+  $scope.num = $stateParams.num;
+  $scope.page = pageObj;
+  
+
+  $scope.goToDetail = person => {
+    var id = person.url.slice(-2, -1);
+    $scope.status = 'Getting your Star Wars character details! One moment!'
+    $state.go('detail', {
+      id: id
+    });
+  }
 });
 
 
-app.controller('detailCtrl', function($scope, state) {
+app.controller('detailCtrl', function($scope, $state, person) {
   console.log('detailCtrl!');
 
-  var person = $scope.page.filter(obj => obj.name.toLowerCase() === name.toLowerCase())[0];
   console.log('person: ', person );
   $scope.person = person;
+
 });
 
 app.controller('homeCtrl', function($scope) {
