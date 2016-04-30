@@ -19,10 +19,10 @@ app.controller('listCtrl', function($scope, $stateParams, $state, pageObj, Peopl
   console.log('pageObj: ', pageObj);
   $scope.num = $stateParams.num;
   $scope.page = pageObj;
-  
+
 
   $scope.goToDetail = person => {
-    var id = person.url.slice(-2, -1);
+    var id = person.url.match(/\d+/g);
     $scope.status = 'Getting your Star Wars character details! One moment!'
     $state.go('detail', {
       id: id
