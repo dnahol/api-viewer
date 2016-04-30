@@ -10,12 +10,12 @@ app.controller('navControl', function($scope) {
 });
 
 
-app.controller('listCtrl', function($scope, $state, pageObj) {
+app.controller('listCtrl', function($scope, $state, pageObj, People) {
   console.log('listCtrl!');
   //$scope.page = [{},{},{},{}] array of person objects on that page
   console.log('pageObj.data.results: ', pageObj.data.results);
   $scope.test = People.getByPage(2);
-  console.log('test:', test);
+  console.log('$scope.test (set to page 2 state):', $scope.test);
   $scope.page = pageObj.data.results;
   //    console.log('$scope.page: ',  $scope.page );
 });

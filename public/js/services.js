@@ -2,11 +2,11 @@
 
 var app = angular.module('routerApp');
 
-app.service('People', function($http, $q, $scope) {
+app.service('People', function($http, $q) {
   var people;
   console.log('$http', $http);
   console.log('$q', $q);
-  console.log('$scope', $scope);
+
   this.getByPage = num => {
     // return people;
     console.log('num:', num);
