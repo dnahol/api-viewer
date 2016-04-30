@@ -20,7 +20,7 @@ app.service('People', function($http, $q) {
 
   this.getById = id => {
     // returning a promise
-    var personUrl = `http://swapi.co/api/people/${id}`
+    var personUrl = `https://swapi.co/api/people/${id}`
     return $http({
       method: 'GET',
       url: personUrl,
